@@ -6,7 +6,7 @@
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
-int main() {
+int main(){
     char estado, codigoDaCarta[4], NomeCidade[10];
 
     int populacao, PontosTuristicos;
@@ -14,7 +14,7 @@ int main() {
     float areaKm, pib;
 
     printf("Insira uma letra de A a H para representar um dos oito estados\n");
-    scanf("%c",&estado); // precisa do &
+    scanf(" %c",&estado); // precisa do &
     
     printf("Insira a lera do estado seguido de um numero de 01 ate 04\n");
     scanf("%s",&codigoDaCarta); // teste ok
@@ -36,9 +36,13 @@ int main() {
 
     pib = pib /100; // coverter para bilhao
 
+    float densidadePop1 = (float)populacao/areaKm, pibPerCapita1 = (pib * 100000000)/(float)populacao; // pop é int, areakm é float, pib é float
+
+
     printf("**CARTA 1\nEstado:   %c\ncodigo Da Carta:   %s\nNomeCidade:   %s\n", estado,codigoDaCarta,NomeCidade); //char
     printf("Numero De Habitantes:   %d\nPontos Turisticos:   %d\n", populacao, PontosTuristicos);// int
-    printf("Area em km:   %.2f\nPIB:   %7.2f bilhoes de reais\n**",areaKm,pib);
+    printf("Area em km:   %.2f\nPIB:   %7.2f bilhoes de reais\n",areaKm,pib);// float, areaKM, PIB
+    printf("Densidade Populacional:   %.2fhab/km\nPIB perCapita: %.f reais**\n",densidadePop1,pibPerCapita1);// float, densidade, perCapita
 
     char estado2, codigoDaCarta2[4], NomeCidade2[10];
 
@@ -68,10 +72,12 @@ int main() {
     scanf("%f",&pib2);
 
     pib2 = pib2 /100; // coverter para bilhao
+    float densidadePop2 = (float)populacao/areaKm, pibPerCapita2 = (pib * 100000000)/(float)populacao; // pop é int, areakm é float, pib é float
 
     printf("**CARTA 2\nEstado:   %c\ncodigo Da Carta:   %s\nNomeCidade:   %s\n", estado2,codigoDaCarta2,NomeCidade2); //char
     printf("Numero De Habitantes:   %d\nPontos Turisticos:   %d\n", populacao2, PontosTuristicos2);// int
-    printf("Area em km:   %.2f\nPIB:   %7.2f bilhoes de reais\n**",areaKm2,pib2);
+    printf("Area em km:   %.2f\nPIB:   %7.2f bilhoes de reais\n");//float, areaKM, PIB
+    printf("Densidade Populacional:   %.2f\nPIB perCapita: %f**",densidadePop2,pibPerCapita2);// float, densidade, percCapita
 
     return 0;
 }
